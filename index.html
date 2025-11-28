@@ -1,5 +1,6 @@
 <!-- File: index.html
-  Purpose: Development / root entry HTML. Contains Open Graph and Twitter meta tags so social platforms can correctly generate share cards.
+  Purpose: Development root HTML. Includes complete Open Graph / Twitter meta tags and JSON-LD person data
+  optimized for Facebook / WhatsApp / Telegram sharing. Contains dev EventSource for live reload.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -7,42 +8,99 @@
     <!-- File purpose: entry HTML served in development -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lisa Wang - Financial Analyst</title>
 
-    <!-- Basic description and canonical -->
-    <meta name="description" content="Lisa Wang — Financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate." />
+    <title>Izabela Sobieska — Independent Financial Analyst & Investor</title>
+
+    <!-- Primary meta -->
+    <meta name="description" content="Izabela Sobieska — Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate. Background at Deutsche Bank and Man Group." />
     <link rel="canonical" href="https://izabela-sobieska.com/" />
 
-    <!-- Open Graph / Facebook / Telegram -->
+    <!-- Open Graph / Facebook / Telegram / WhatsApp -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Lisa Wang - Financial Analyst" />
-    <meta property="og:description" content="Lisa Wang — Financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate." />
+    <meta property="og:title" content="Izabela Sobieska — Independent Financial Analyst & Investor" />
+    <meta property="og:description" content="Bridging traditional finance and the digital asset future. Specializing in crypto strategies, asset management and risk control. 15+ years experience, with background at Deutsche Bank and Man Group." />
     <meta property="og:url" content="https://izabela-sobieska.com/" />
-    <meta property="og:site_name" content="Lisa Wang" />
+    <meta property="og:site_name" content="Izabela Sobieska" />
 
-    <!-- Share image (absolute URL, public CDN) -->
+    <!-- Use the public CDN image already in your repo as the sharing card image -->
     <meta property="og:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
     <meta property="og:image:secure_url" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
-    <meta property="og:image:alt" content="Portrait of Lisa Wang" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Portrait of Izabela Sobieska" />
     <link rel="image_src" href="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lisa Wang - Financial Analyst" />
-    <meta name="twitter:description" content="Lisa Wang — Financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate." />
+    <meta name="twitter:title" content="Izabela Sobieska — Independent Financial Analyst & Investor" />
+    <meta name="twitter:description" content="Bridging traditional finance and the digital asset future. Specializing in crypto strategies, asset management and risk control." />
     <meta name="twitter:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
+    <meta name="twitter:image:alt" content="Portrait of Izabela Sobieska" />
 
+    <!-- Favicons / Theme -->
+    <meta name="theme-color" content="#059669" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Structured data: Person -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Izabela Sobieska",
+        "jobTitle": "Independent Financial Analyst & Investor",
+        "description": "Independent investor and financial analyst with 15+ years in multi-asset, FX/derivatives, crypto and real estate. Background at Deutsche Bank and Man Group.",
+        "image": "https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg",
+        "url": "https://izabela-sobieska.com/"
+      }
+    </script>
+
+    <!-- Stylesheet -->
     <link href="main.css" rel="stylesheet">
+    <style>
+      /* Simple inline preview card for development (visible in browser, not used by social crawlers) */
+      .preview-card {
+        max-width: 900px;
+        margin: 28px auto;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08);
+      }
+      .preview-left { flex: 1; min-width: 0; }
+      .preview-name { font-size: 20px; font-weight: 700; color: #0f172a; margin: 0 0 6px; }
+      .preview-title { margin: 0 0 12px; color: #475569; font-size: 14px; }
+      .preview-cta { display: inline-block; margin-top: 12px; background: #059669; color: #fff; padding: 8px 12px; border-radius: 999px; text-decoration: none; font-weight: 600; }
+      .preview-right { width: 160px; flex-shrink: 0; }
+      .preview-avatar { width: 160px; height: 160px; object-fit: cover; border-radius: 10px; display: block; }
+    </style>
   </head>
+
   <script>
-    new EventSource('/esbuild').addEventListener('change', () =>
-      location.reload()
-    )
+    /* Dev HMR: live reload in development */
+    new EventSource('/esbuild').addEventListener('change', () => location.reload())
   </script>
+
   <body>
     <div id="app"></div>
+
+    <!-- Visible development preview so you can confirm the card image and copy quickly -->
+    <main class="preview-card" aria-label="Preview card">
+      <div class="preview-left">
+        <h1 class="preview-name">Izabela Sobieska</h1>
+        <p class="preview-title">Independent Financial Analyst & Investor — multi-asset, FX/derivatives, crypto & real estate</p>
+        <p style="margin:0;color:#334155;font-size:14px">Email • WhatsApp • LinkedIn</p>
+        <a class="preview-cta" href="mailto:hello@izabela-sobieska.com" aria-label="Contact Izabela">Contact</a>
+      </div>
+      <div class="preview-right">
+        <img class="preview-avatar" src="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" alt="Portrait of Izabela Sobieska" />
+      </div>
+    </main>
+
     <script src="main.js"></script>
   </body>
 </html>
