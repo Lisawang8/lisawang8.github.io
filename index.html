@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,7 @@
     <title>Lisa Wang — Independent Investor & Financial Analyst</title>
     <meta
       name="description"
-      content="Lisa Wang — Independent investor and financial analyst with 13+ years in global markets."
+      content="Values-driven investor and analytical thinker. An independent investor and financial analyst with over 13 years of experience in private wealth management, cryptocurrency day trading, forex and derivatives trading, and income-generating real estate investment."
     />
     <link rel="canonical" href="https://lisa-wangs.com/" />
 
@@ -24,7 +24,7 @@
     />
     <meta property="og:url" content="https://lisa-wangs.com/" />
 
-    <!-- Portrait image used in the card -->
+    <!-- 竖版肖像：分享卡主图 -->
     <meta
       property="og:image"
       content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg"
@@ -38,7 +38,15 @@
     <meta property="og:image:height" content="1000" />
     <meta property="og:image:alt" content="Portrait of Lisa Wang" />
 
-    <!-- Twitter Card -->
+    <!-- 备选横幅图（可选） -->
+    <meta
+      property="og:image"
+      content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/860c316b-bb4a-4580-b7bb-f82b90cf80e7.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -53,28 +61,191 @@
       content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg"
     />
 
-    <!-- Legacy crawlers -->
+    <!-- 旧式抓取器 -->
     <link
       rel="image_src"
       href="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg"
     />
 
-    <!-- 你打包后的样式 -->
-    <link href="main.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="app"></div>
-
-    <!-- 生产环境可以去掉 HMR 代码；留着也不会影响社交抓取 -->
-    <script>
-      try {
-        new EventSource('/esbuild').addEventListener('change', () =>
-          location.reload()
-        )
-      } catch (e) {
-        /* no-op in production */
+    <!-- JSON-LD Person -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lisa Wang",
+        "jobTitle": "Independent Investor & Financial Analyst",
+        "description": "Values-driven investor and analytical thinker. 13+ years in private wealth management, cryptocurrency day trading, forex and derivatives trading, and income-generating real estate investment.",
+        "image": "https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg",
+        "worksFor": { "@type": "Organization", "name": "Moomoo Technologies Inc." },
+        "email": "mailto:hello@lisa-wang.example"
       }
     </script>
+
+    <!-- 你的打包样式 -->
+    <link href="main.css" rel="stylesheet" />
+
+    <!-- 预览卡样式：适配手机 -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0f172a0d;
+      }
+      .preview-card {
+        max-width: 960px;
+        margin: 16px auto;
+        padding: 16px;
+        box-sizing: border-box;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, Arial;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(2, 6, 23, 0.06);
+      }
+      .preview-left {
+        flex: 1;
+        min-width: 0;
+      }
+      .preview-name {
+        font-size: 20px;
+        font-weight: 800;
+        color: #0b1220;
+        margin: 0 0 6px;
+      }
+      .preview-title {
+        margin: 0 0 10px;
+        color: #475569;
+        font-size: 14px;
+      }
+      .preview-meta {
+        color: #334155;
+        font-size: 13px;
+        margin: 4px 0;
+      }
+      .quote {
+        font-style: italic;
+        color: #334155;
+        margin-top: 6px;
+        font-size: 13px;
+      }
+      .preview-cta {
+        display: inline-block;
+        margin-top: 10px;
+        background: #0ea5a4;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 13px;
+      }
+      .preview-right {
+        width: 180px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .preview-avatar {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+      }
+      .note {
+        color: #64748b;
+        font-size: 12px;
+        margin-top: 8px;
+      }
+      .kbd {
+        background: #0b1220;
+        color: #fff;
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 11px;
+      }
+      @media (max-width: 720px) {
+        .preview-card {
+          flex-direction: column;
+          margin: 12px;
+          padding: 12px;
+        }
+        .preview-right {
+          width: 100%;
+        }
+        .preview-avatar {
+          width: 100%;
+          height: auto;
+          max-height: 360px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SPA 挂载点：你的 React/Vue 会渲染到这里；如果不用 JS，下面的静态预览仍然可见 -->
+    <div id="app"></div>
+
+    <!-- 静态预览卡，方便人工在浏览器里确认分享效果 -->
+    <main class="preview-card" aria-label="Preview card">
+      <div class="preview-left">
+        <h1 class="preview-name">Lisa Wang</h1>
+        <p class="preview-title">
+          Independent Investor &amp; Financial Analyst
+        </p>
+        <p class="preview-meta">
+          13+ years in global markets · Focus: Crypto · FX · Derivatives · Real
+          Estate
+        </p>
+        <p class="preview-meta">
+          Current Role: Financial Analyst, Moomoo Technologies Inc. · Office:
+          Jersey City, NJ · Global coverage
+        </p>
+        <p class="quote">
+          "Treat others with sincerity, enjoy life fully, and let new goals lead
+          the next stage of growth."
+        </p>
+        <a
+          class="preview-cta"
+          href="mailto:hello@lisa-wang.example"
+          aria-label="Email Lisa"
+          >Email Lisa</a
+        >
+        <p class="note">
+          如果 Telegram 显示旧图，可以尝试把页面链接发送给
+          <strong>@webpagebot</strong> 或访问带版本号的链接，例如：
+          <span class="kbd">https://lisa-wangs.com/?v=2</span>
+          ，以强制重新抓取。
+        </p>
+      </div>
+
+      <div class="preview-right">
+        <img
+          class="preview-avatar"
+          src="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg"
+          alt="Portrait of Lisa Wang"
+        />
+      </div>
+    </main>
+
+    <!-- HMR（仅开发环境有效；放在 body 末尾，结构合法） -->
+    <script>
+      try {
+        new EventSource("/esbuild").addEventListener("change", () =>
+          location.reload()
+        );
+      } catch (e) {
+        // 生产环境无 HMR
+      }
+    </script>
+
+    <!-- 你的打包 JS -->
     <script src="main.js"></script>
   </body>
 </html>
