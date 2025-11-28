@@ -3,16 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Creator</title>
-    <link href="main.css" rel="stylesheet">
+
+    <title>Lisa Wang — Independent Investor & Financial Analyst</title>
+    <meta
+      name="description"
+      content="Lisa Wang — Independent investor and financial analyst with 13+ years in global markets."
+    />
+    <link rel="canonical" href="https://lisa-wangs.com/" />
+
+    <!-- Open Graph (Facebook / Telegram / WhatsApp) -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Lisa Wang" />
+    <meta
+      property="og:title"
+      content="Lisa Wang — Independent Investor & Financial Analyst"
+    />
+    <meta
+      property="og:description"
+      content="Values-driven investor and analytical thinker. 13+ years in private wealth management, crypto day trading, forex & derivatives, and income-generating real estate investment."
+    />
+    <meta property="og:url" content="https://lisa-wangs.com/" />
+
+    <!-- Portrait image used in the card -->
+    <meta
+      property="og:image"
+      content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="1000" />
+    <meta property="og:image:alt" content="Portrait of Lisa Wang" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Lisa Wang — Independent Investor & Financial Analyst"
+    />
+    <meta
+      name="twitter:description"
+      content="Values-driven investor and analytical thinker. 13+ years in private wealth management, crypto day trading, forex & derivatives, and income-generating real estate investment."
+    />
+    <meta
+      name="twitter:image"
+      content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg"
+    />
+
+    <!-- Legacy crawlers -->
+    <link
+      rel="image_src"
+      href="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg"
+    />
+
+    <!-- 你打包后的样式 -->
+    <link href="main.css" rel="stylesheet" />
   </head>
-  <script>
-    new EventSource('/esbuild').addEventListener('change', () =>
-      location.reload()
-    )
-  </script>
   <body>
     <div id="app"></div>
+
+    <!-- 生产环境可以去掉 HMR 代码；留着也不会影响社交抓取 -->
+    <script>
+      try {
+        new EventSource('/esbuild').addEventListener('change', () =>
+          location.reload()
+        )
+      } catch (e) {
+        /* no-op in production */
+      }
+    </script>
     <script src="main.js"></script>
   </body>
 </html>
