@@ -1,105 +1,211 @@
-<!--
-  dist/index.html
-
-  用途：
-  - 生产环境静态入口页面，包含 Open Graph / Twitter Card 元信息以便社交平台抓取分享卡片；
-  - 在 #app 区保留一个简洁的静态“名片”预览（包含头像、姓名、职位、简介与联系方式），当 JS 未加载时仍可见；
-  - 包含 JSON-LD 的 Person 结构化数据，方便搜索引擎/社媒识别联系人信息。
--->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
-    <title>Lisa Wang — Financial Analyst & Independent Investor</title>
+    <!-- =========================
+         基本信息
+    ========================== -->
+    <title>Izabela Sobieska — Independent Financial Analyst & Investor</title>
 
-    <!-- Basic -->
-    <meta name="description" content="Lisa Wang — Independent investor & financial analyst. 13+ years in private wealth, crypto, FX, derivatives and real estate. Email: wangyuyanlisa@gmail.com" />
-    <link rel="canonical" href="https://lisa-wangs.com/" />
+    <meta
+      name="description"
+      content="Izabela Sobieska — Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate."
+    />
+    <!-- TODO: 换成你自己的正式域名 -->
+    <link rel="canonical" href="https://izabela-sobieska.com/" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- =========================
+         Open Graph / Facebook / Telegram / WhatsApp
+         （这几个平台都优先使用 og:* 标签）
+    ========================== -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Lisa Wang — Financial Analyst & Independent Investor" />
-    <meta property="og:description" content="Lisa Wang — Independent investor & financial analyst. 13+ years in private wealth, crypto, FX, derivatives and real estate. Email: wangyuyanlisa@gmail.com" />
-    <meta property="og:url" content="https://lisa-wangs.com/" />
-    <meta property="og:site_name" content="Lisa Wang" />
-    <!-- Ensure this is an absolute, publicly accessible image URL -->
-    <meta property="og:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
-    <meta property="og:image:alt" content="Portrait of Lisa Wang" />
+    <meta
+      property="og:title"
+      content="Izabela Sobieska — Independent Financial Analyst & Investor"
+    />
+    <meta
+      property="og:description"
+      content="Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate."
+    />
+    <!-- TODO: 换成你自己的正式域名 -->
+    <meta
+      property="og:url"
+      content="https://izabela-sobieska.com/"
+    />
+    <meta property="og:site_name" content="Izabela Sobieska" />
+
+    <!-- og:image 一定要是公网可访问的绝对地址，建议 1200x630 或接近 1.91:1 比例 -->
+    <!-- TODO: 换成你自己放在服务器/CDN 上的头像卡片图地址 -->
+    <meta
+      property="og:image"
+      content="https://your-cdn-or-site.com/images/izabela-card-1200x630.jpg"
+    />
+    <meta property="og:image:alt" content="Portrait of Izabela Sobieska" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-    <!-- Twitter -->
+    <!-- =========================
+         Twitter Card
+    ========================== -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lisa Wang — Financial Analyst & Independent Investor" />
-    <meta name="twitter:description" content="Independent investor & financial analyst. 13+ years in private wealth, crypto, FX, derivatives and real estate. Email: wangyuyanlisa@gmail.com" />
-    <meta name="twitter:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
+    <meta
+      name="twitter:title"
+      content="Izabela Sobieska — Independent Financial Analyst & Investor"
+    />
+    <meta
+      name="twitter:description"
+      content="Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate."
+    />
+    <meta
+      name="twitter:image"
+      content="https://your-cdn-or-site.com/images/izabela-card-1200x630.jpg"
+    />
 
     <!-- Favicons / Theme -->
-    <meta name="theme-color" content="#F59E0B" />
+    <meta name="theme-color" content="#059669" />
     <link rel="icon" href="/favicon.ico" />
 
-    <!-- Structured data for Person -->
+    <!-- =========================
+         Person 结构化数据（可选但推荐）
+    ========================== -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Lisa Wang",
-        "jobTitle": "Financial Analyst & Independent Investor",
-        "description": "Independent investor & financial analyst with 13+ years in private wealth, crypto, FX, derivatives and real estate.",
-        "image": "https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg",
-        "email": "mailto:wangyuyanlisa@gmail.com",
-        "url": "https://lisa-wangs.com/"
+        "name": "Izabela Sobieska",
+        "jobTitle": "Independent Financial Analyst & Investor",
+        "description": "Independent investor and financial analyst with 15+ years in multi-asset, FX/derivatives, crypto and real estate.",
+        "image": "https://your-cdn-or-site.com/images/izabela-card-1200x630.jpg",
+        "url": "https://izabela-sobieska.com/"
       }
     </script>
 
-    <!-- Keep existing built stylesheet filename (do not change) -->
+    <!-- 保持你原来构建后的 CSS 文件名 -->
     <link rel="stylesheet" href="main-BBH4KZVP.css" />
+
+    <!-- =========================
+         静态名片预览（No-JS 情况下也可见）
+    ========================== -->
     <style>
-      /* Minimal inline styles for the static card preview (keeps visibility in no-JS) */
-      .card { max-width:900px; margin:28px auto; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; display:flex; gap:20px; align-items:center; background:#ffffff; border-radius:12px; padding:20px; box-shadow:0 6px 20px rgba(16,24,40,0.08); }
-      .card-left { flex:1; min-width:0; }
-      .name { font-size:20px; font-weight:700; color:#0f172a; margin:0 0 6px; }
-      .title { margin:0 0 12px; color:#475569; font-size:14px; }
-      .info { font-size:14px; color:#334155; margin:6px 0; }
-      .cta { display:inline-block; margin-top:12px; background:#f59e0b; color:#fff; padding:8px 12px; border-radius:999px; text-decoration:none; font-weight:600; }
-      .card-right { width:160px; flex-shrink:0; }
-      .avatar { width:160px; height:160px; object-fit:cover; border-radius:10px; display:block; }
-      .meta-note { font-size:12px; color:#64748b; margin-top:10px; }
+      .card {
+        max-width: 900px;
+        margin: 28px auto;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+          'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08);
+      }
+      .card-left {
+        flex: 1;
+        min-width: 0;
+      }
+      .name {
+        font-size: 20px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 6px;
+      }
+      .title {
+        margin: 0 0 12px;
+        color: #475569;
+        font-size: 14px;
+      }
+      .info {
+        font-size: 14px;
+        color: #334155;
+        margin: 6px 0;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 12px;
+        background: #059669;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .card-right {
+        width: 160px;
+        flex-shrink: 0;
+      }
+      .avatar {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+      }
+      .meta-note {
+        font-size: 12px;
+        color: #64748b;
+        margin-top: 10px;
+      }
     </style>
   </head>
+
   <body>
-    <!-- Static preview shown when JS not loaded; React will mount on #root as usual -->
+    <!-- 静态名片预览（JS 未加载时显示） -->
     <div id="app">
-      <div class="card" role="region" aria-label="Lisa Wang business card">
+      <div class="card" role="region" aria-label="Izabela Sobieska business card">
         <div class="card-left">
-          <h1 class="name">Lisa Wang</h1>
-          <p class="title">Financial Analyst & Independent Investor</p>
-          <p class="info">Independent investor & financial analyst with 13+ years in private wealth, crypto, FX, derivatives and real estate.</p>
-          <p class="info">Email: <a href="mailto:wangyuyanlisa@gmail.com">wangyuyanlisa@gmail.com</a></p>
-          <a class="cta" href="mailto:wangyuyanlisa@gmail.com">Email Lisa</a>
-          <div class="meta-note">Share preview uses Open Graph tags (og:image, og:description). If the share still shows an old image, see instructions below to refresh Facebook cache.</div>
+          <h1 class="name">Izabela Sobieska</h1>
+          <p class="title">Independent Financial Analyst & Investor</p>
+          <p class="info">
+            Independent investor and financial analyst with 15+ years in
+            multi-asset, FX/derivatives, crypto and real estate.
+          </p>
+          <!-- 这里如果你有邮箱或者 Telegram，可写上 -->
+          <p class="info">
+            Email:
+            <a href="mailto:your-email@example.com"
+              >your-email@example.com</a
+            >
+          </p>
+          <a class="cta" href="mailto:your-email@example.com">
+            Contact Izabela
+          </a>
+          <div class="meta-note">
+            Share previews on Facebook, Telegram and WhatsApp use the Open
+            Graph tags in the page head (og:title, og:description,
+            og:image).
+          </div>
         </div>
         <div class="card-right">
-          <img class="avatar" src="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" alt="Portrait of Lisa Wang" />
+          <!-- TODO: 与 og:image 可以使用同一张图，或者用更适合头像比例的 -->
+          <img
+            class="avatar"
+            src="https://your-cdn-or-site.com/images/izabela-avatar-400x400.jpg"
+            alt="Portrait of Izabela Sobieska"
+          />
         </div>
       </div>
     </div>
 
-    <!-- React 挂载点（保持原有 #root） -->
+    <!-- React 挂载点 -->
     <div id="root"></div>
 
-    <!-- Keep existing built script filename (do not change) -->
+    <!-- 保持你原来构建后的 JS 文件名 -->
     <script src="main-X24REXSI.js"></script>
 
-    <!-- Small helper: brief instructions for forcing Facebook to refresh preview -->
     <!--
-      抓取/刷新步骤简短提示：
-      1) 部署并确保 https://lisa-wangs.com/ 可通过 HTTPS 公网访问。
-      2) 打开 Facebook Sharing Debugger: https://developers.facebook.com/tools/debug/
-      3) 粘贴你的 URL，点击 Debug，然后点击 "Scrape Again" 强制刷新缓存。
-      4) 如果仍然显示旧图：清除 CDN 缓存或在 URL 后加上 ?v=2 临时强制抓取新的 URL。
+      当 Facebook / Telegram / WhatsApp 仍然显示旧卡片时：
+      1) 确保已经部署到正式 HTTPS 域名；
+      2) Facebook: 打开 https://developers.facebook.com/tools/debug/ ，输入网址，
+         点击 “Debug” -> “Scrape Again”；
+      3) Telegram: 在任意聊天输入链接，发之前在输入框里按一两次 Backspace，
+         重新触发预览；或在链接后加 ?v=2 这样的查询参数；
+      4) WhatsApp: 同样可在链接后加 ?v=2 来强制重新抓取。
     -->
   </body>
 </html>
