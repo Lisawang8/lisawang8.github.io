@@ -1,46 +1,18 @@
-/**
- * index.html
- *
- * Root HTML for development. Kept minimal and UTF-8 encoded to avoid mobile encoding issues.
- * Open Graph meta tags reference the portrait URL so social platforms can generate a correct preview.
- */
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lisa Wang — Independent Investor & Financial Analyst</title>
-    <meta name="description" content="Lisa Wang — Independent investor & financial analyst with 13+ years in private wealth, crypto, FX & derivatives, and real estate investment. Contact: wangyuyanlisa@gmail.com" />
-    <link rel="canonical" href="https://lisa-wangs.com/" />
-
-    <!-- Open Graph / Twitter -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Lisa Wang — Financial Analyst & Independent Investor" />
-    <meta property="og:description" content="13+ years across private wealth, crypto, FX, derivatives and real estate. Contact: wangyuyanlisa@gmail.com" />
-    <meta property="og:url" content="https://lisa-wangs.com/" />
-    <meta property="og:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
-    <meta property="og:image:alt" content="Portrait of Lisa Wang" />
-    <meta property="og:site_name" content="Lisa Wang" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lisa Wang — Financial Analyst & Independent Investor" />
-    <meta name="twitter:description" content="13+ years across private wealth, crypto, FX, derivatives and real estate. Contact: wangyuyanlisa@gmail.com" />
-    <meta name="twitter:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
-
-    <meta name="theme-color" content="#F59E0B" />
-    <link rel="icon" href="/favicon.ico" />
-
-    <meta name="robots" content="index,follow" />
-    <link href="main.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Creator</title>
+    <link href="main.css" rel="stylesheet">
   </head>
+  <script>
+    new EventSource('/esbuild').addEventListener('change', () =>
+      location.reload()
+    )
+  </script>
   <body>
     <div id="app"></div>
-    <!-- Development script / build will inject main.js or similar bundle -->
-    <script>
-      // HMR dev script will be injected by your dev pipeline (if available).
-      // Keep this minimal to avoid injecting any non-UTF8 content.
-    </script>
     <script src="main.js"></script>
   </body>
 </html>
