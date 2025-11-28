@@ -1,1 +1,71 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="main-BBH4KZVP.css" /></head><body><div id="app"></div><div id="root"></div><script src="main-X24REXSI.js"></script></body></html>
+<!--
+  dist/index.html
+
+  文件用途：
+  - 生产环境静态入口 HTML。包含应用挂载点 (#root)、预置的社交分享 meta（Open Graph / Twitter Card）、
+    canonical 与基础静态占位内容（在 JS 未加载时显示）。
+  - 请确保部署后的根域名为 https://lisa-wangs.com/ 以使社媒抓取的 canonical/og:url 生效。
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 基本信息 -->
+    <title>Lisa Wang — Financial Analyst</title>
+    <meta name="description" content="Lisa Wang — Independent investor & financial analyst with 13+ years in private wealth, crypto, FX & derivatives, and real estate investment. Contact: wangyuyanlisa@gmail.com" />
+    <link rel="canonical" href="https://lisa-wangs.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lisa Wang — Financial Analyst & Independent Investor" />
+    <meta property="og:description" content="13+ years across private wealth, crypto, FX, derivatives and real estate. Contact: wangyuyanlisa@gmail.com" />
+    <meta property="og:url" content="https://lisa-wangs.com/" />
+    <meta property="og:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
+    <meta property="og:image:alt" content="Portrait of Lisa Wang" />
+    <meta property="og:site_name" content="Lisa Wang" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lisa Wang — Financial Analyst & Independent Investor" />
+    <meta name="twitter:description" content="13+ years across private wealth, crypto, FX, derivatives and real estate. Contact: wangyuyanlisa@gmail.com" />
+    <meta name="twitter:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
+
+    <!-- 主题色与图标 -->
+    <meta name="theme-color" content="#F59E0B" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- 站点样式（保持构建时生成的文件名不变） -->
+    <link rel="stylesheet" href="main-BBH4KZVP.css" />
+  </head>
+  <body class="antialiased bg-white text-slate-900">
+    <!--
+      静态占位内容（在 JS 未加载或索引器爬取时可见）：
+      - 这不会影响你的 React 应用（React 会在 #root 上挂载）。
+      - 若你希望完全由 React 渲染，可以把以下内容清空；但建议保留简短的联系方式以提升无 JS 时的可用性。
+    -->
+    <div id="app" style="padding:28px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;">
+      <header style="max-width:780px; margin:0 auto;">
+        <h1 style="margin:0; font-size:20px; font-weight:700; color:#0f172a;">Lisa Wang</h1>
+        <p style="margin:8px 0 0; color:#475569; font-size:14px;">
+          Independent investor & financial analyst — 13+ years in private wealth, crypto, FX, derivatives and real estate.
+        </p>
+        <p style="margin:12px 0 0; font-size:14px;">
+          <a href="mailto:wangyuyanlisa@gmail.com" style="display:inline-block; padding:8px 12px; background:#f59e0b; color:#fff; border-radius:999px; text-decoration:none; font-weight:600;">Email Lisa</a>
+        </p>
+      </header>
+    </div>
+
+    <!-- React 挂载点（保持原有 #root） -->
+    <div id="root"></div>
+
+    <!-- 站点脚本（保持构建时生成的文件名不变） -->
+    <script src="main-X24REXSI.js"></script>
+
+    <!-- 以下 noscript 提示可帮助诊断无 JS 问题 -->
+    <noscript>
+      This site requires JavaScript to run the full experience. Please enable JavaScript in your browser.
+    </noscript>
+  </body>
+</html>
