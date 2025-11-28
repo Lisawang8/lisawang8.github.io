@@ -1,35 +1,35 @@
-<!--
-  Purpose: Development root HTML for Lisa Wang.
-  This file includes Open Graph / Twitter meta optimized for Facebook, WhatsApp and Telegram share cards.
-  Replace canonical / og:url with your production domain if different.
--->
+/**
+ * @fileoverview 开发用根 HTML（index.html）。
+ * 目的：为 Lisa Wang 提供社交分享优化的 head meta（优先使用主页肖像），并在 body 中显示可视预览卡，便于核验。
+ */
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lisa Wang — Independent Investor & Financial Analyst</title>
-    <meta name="description" content="An independent investor and financial analyst with over 13 years of experience in private wealth management, cryptocurrency day trading, forex and derivatives trading, and income-generating real estate investment." />
+    <meta name="description" content="Values-driven investor and analytical thinker. An independent investor and financial analyst with over 13 years of experience in private wealth management, cryptocurrency day trading, forex and derivatives trading, and income-generating real estate investment." />
     <link rel="canonical" href="https://lisa-wangs.com/" />
 
-    <!-- Open Graph: primary avatar + fallback large banner for better link previews -->
+    <!--
+      优先使用 Lisa 的肖像（确保这是第一个 og:image，增加成功率）。
+      如果你后续上传一个 1200x630 横幅，建议把它放在第二个 og:image，用于 WhatsApp / Telegram 横幅优先场景。
+    -->
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Lisa Wang" />
     <meta property="og:title" content="Lisa Wang — Independent Investor & Financial Analyst" />
-    <meta property="og:description" content="Values-driven investor and analytical thinker. 13+ years in global markets. Focus: Crypto · FX · Derivatives · Real Estate. Current Role: Financial Analyst, Moomoo Technologies Inc." />
+    <meta property="og:description" content="Values-driven investor and analytical thinker. 13+ years in private wealth management, crypto day trading, forex & derivatives, and income-generating real estate investment." />
     <meta property="og:url" content="https://lisa-wangs.com/" />
 
-    <!-- Primary image (portrait) -->
+    <!-- 首选：Lisa 的竖版肖像（作为分享头像） -->
     <meta property="og:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
     <meta property="og:image:secure_url" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
-    <meta property="og:image:alt" content="Portrait of Lisa Wang" />
-    <!-- Providing dimensions helps crawlers select the right image; avatar is tall -->
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="800" />
     <meta property="og:image:height" content="1000" />
+    <meta property="og:image:alt" content="Portrait of Lisa Wang" />
 
-    <!-- Fallback wide banner (recommended for WhatsApp / Telegram preview). 
-         This uses the smart placeholder as a fallback so platforms that prefer wide images will have a larger asset.
-         Replace with your uploaded 1200x630 banner URL for best result. -->
+    <!-- 备选横幅（若你上传 1200x630 海报可替换此项）。放在第二位作 fallback，抓取器会选择第一个可用图 -->
     <meta property="og:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/860c316b-bb4a-4580-b7bb-f82b90cf80e7.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -37,19 +37,20 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Lisa Wang — Independent Investor & Financial Analyst" />
-    <meta name="twitter:description" content="Values-driven investor and analytical thinker. 13+ years in global markets. Focus: Crypto · FX · Derivatives · Real Estate." />
-    <meta name="twitter:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/860c316b-bb4a-4580-b7bb-f82b90cf80e7.jpg" />
-    <meta name="twitter:image:alt" content="Lisa Wang — Portrait and professional snapshot" />
+    <meta name="twitter:description" content="Values-driven investor and analytical thinker. 13+ years in private wealth management, crypto day trading, forex & derivatives, and income-generating real estate investment." />
+    <meta name="twitter:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
+
+    <!-- 通用图像引用，便于旧式抓取器 -->
     <link rel="image_src" href="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
 
-    <!-- Structured data -->
+    <!-- JSON-LD 结构化数据（Person） -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Lisa Wang",
         "jobTitle": "Independent Investor & Financial Analyst",
-        "description": "Values-driven investor and analytical thinker. An independent investor and financial analyst with over 13 years of experience in private wealth management, cryptocurrency day trading, forex and derivatives trading, and income-generating real estate investment.",
+        "description": "Values-driven investor and analytical thinker. 13+ years in private wealth management, cryptocurrency day trading, forex and derivatives trading, and income-generating real estate investment.",
         "image": "https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg",
         "worksFor": { "@type": "Organization", "name": "Moomoo Technologies Inc." },
         "email": "mailto:hello@lisa-wang.example"
@@ -58,7 +59,7 @@
 
     <link href="main.css" rel="stylesheet">
     <style>
-      /* Simple visual preview card for manual verification */
+      /* 预览卡样式：简洁、对比强烈，便于人工核验分享图文 */
       .preview-card {
         max-width: 980px;
         margin: 28px auto;
@@ -84,13 +85,10 @@
         .preview-right { width:100%; display:block; }
         .preview-avatar { width:100%; height:320px; border-radius:10px; }
       }
+      .note { color:#475569; font-size:13px; margin-top:10px; }
+      .kbd { background:#0b1220;color:#fff;padding:2px 6px;border-radius:6px;font-weight:700;font-size:12px; }
     </style>
   </head>
-
-  <script>
-    /* Dev HMR: live reload in development */
-    new EventSource('/esbuild').addEventListener('change', () => location.reload())
-  </script>
 
   <body>
     <div id="app"></div>
@@ -103,12 +101,26 @@
         <p class="preview-meta">Current Role: Financial Analyst, Moomoo Technologies Inc. · Office: Jersey City, NJ · Global coverage</p>
         <p class="quote">"Treat others with sincerity, enjoy life fully, and let new goals lead the next stage of growth."</p>
         <a class="preview-cta" href="mailto:hello@lisa-wang.example" aria-label="Email Lisa">Email Lisa</a>
+
+        <p class="note">
+          如果 Telegram 显示旧图，请把页面链接发送给 <strong>@webpagebot</strong> 或访问带版本号的链接，例如：
+          <span class="kbd">https://lisa-wangs.com/?v=2</span>，以强制重新抓取。
+        </p>
       </div>
 
       <div class="preview-right">
         <img class="preview-avatar" src="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" alt="Portrait of Lisa Wang" />
       </div>
     </main>
+
+    <script>
+      // Dev HMR: live reload in development
+      try {
+        new EventSource('/esbuild').addEventListener('change', () => location.reload())
+      } catch (e) {
+        // 在生产环境中无需 HMR
+      }
+    </script>
 
     <script src="main.js"></script>
   </body>
