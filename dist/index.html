@@ -1,143 +1,96 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+<!--
+  dist/index.html
 
-  <!-- =========================
-       基本信息
-  ========================== -->
-  <title>Izabela Sobieska — Independent Financial Analyst & Investor</title>
+  用途：
+  - 生产环境静态入口页面，包含全面的 Open Graph / Twitter Card 元信息，确保社交平台在分享时能正确展示头像与名片信息；
+  - 当 JS 未加载时在 #app 区显示一个静态名片预览，方便社交抓取器和无 JS 场景。
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta
-    name="description"
-    content="Izabela Sobieska — Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate."
-  />
-  <link rel="canonical" href="https://izabela-sobieska.com/" />
+    <title>Izabela Sobieska — Independent Financial Analyst & Investor</title>
 
-  <!-- =========================
-       Open Graph / Facebook / Telegram / WhatsApp
-  ========================== -->
-  <meta property="og:type" content="website" />
-  <meta
-    property="og:title"
-    content="Izabela Sobieska — Independent Financial Analyst & Investor"
-  />
-  <meta
-    property="og:description"
-    content="Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate."
-  />
-  <meta property="og:url" content="https://izabela-sobieska.com/" />
-  <meta property="og:site_name" content="Izabela Sobieska" />
+    <!-- Basic -->
+    <meta name="description" content="Izabela Sobieska — Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate." />
+    <link rel="canonical" href="https://izabela-sobieska.com/" />
 
-  <!-- ★ 用你刚才那张图做分享卡片图 -->
-  <meta
-    property="og:image"
-    content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/63f8bfb3-????????-ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg"
-  />
-  <meta property="og:image:alt" content="Portrait of Izabela Sobieska" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+    <!-- Open Graph / Facebook / Telegram / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Izabela Sobieska — Independent Financial Analyst & Investor" />
+    <meta property="og:description" content="Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate." />
+    <meta property="og:url" content="https://izabela-sobieska.com/" />
+    <meta property="og:site_name" content="Izabela Sobieska" />
 
-  <!-- =========================
-       Twitter Card
-  ========================== -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta
-    name="twitter:title"
-    content="Izabela Sobieska — Independent Financial Analyst & Investor"
-  />
-  <meta
-    name="twitter:description"
-    content="Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate."
-  />
-  <meta
-    name="twitter:image"
-    content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/63f8bfb3-????????-ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg"
-  />
+    <!-- 使用真实可访问的图片 URL（确保没有占位符） -->
+    <meta property="og:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
+    <meta property="og:image:secure_url" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
+    <meta property="og:image:alt" content="Portrait of Izabela Sobieska" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <link rel="image_src" href="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
 
-  <!-- Favicons / Theme -->
-  <meta name="theme-color" content="#059669" />
-  <link rel="icon" href="/favicon.ico" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Izabela Sobieska — Independent Financial Analyst & Investor" />
+    <meta name="twitter:description" content="Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate." />
+    <meta name="twitter:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
 
-  <!-- =========================
-       Person 结构化数据
-  ========================== -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Izabela Sobieska",
-      "jobTitle": "Independent Financial Analyst & Investor",
-      "description": "Independent investor and financial analyst with 15+ years in multi-asset, FX/derivatives, crypto and real estate.",
-      "image": "https://pub-cdn.sider.ai/u/U005HE02679/web-coder/63f8bfb3-????????-ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg",
-      "url": "https://izabela-sobieska.com/"
-    }
-  </script>
+    <!-- Favicons / Theme -->
+    <meta name="theme-color" content="#059669" />
+    <link rel="icon" href="/favicon.ico" />
 
-  <link rel="stylesheet" href="main-BBH4KZVP.css" />
+    <!-- Person structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Izabela Sobieska",
+        "jobTitle": "Independent Financial Analyst & Investor",
+        "description": "Independent investor and financial analyst with 15+ years in multi-asset, FX/derivatives, crypto and real estate.",
+        "image": "https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg",
+        "url": "https://izabela-sobieska.com/"
+      }
+    </script>
 
-  <!-- 下面是你原来的静态名片样式，保持不变 -->
-  <style>
-    .card {
-      max-width: 900px;
-      margin: 28px auto;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
-        Roboto, 'Helvetica Neue', Arial;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08);
-    }
-    .card-left {
-      flex: 1;
-      min-width: 0;
-    }
-    .name {
-      font-size: 20px;
-      font-weight: 700;
-      color: #0f172a;
-      margin: 0 0 6px;
-    }
-    .title {
-      margin: 0 0 12px;
-      color: #475569;
-      font-size: 14px;
-    }
-    .info {
-      font-size: 14px;
-      color: #334155;
-      margin: 6px 0;
-    }
-    .cta {
-      display: inline-block;
-      margin-top: 12px;
-      background: #059669;
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .card-right {
-      width: 160px;
-      flex-shrink: 0;
-    }
-    .avatar {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 10px;
-      display: block;
-    }
-    .meta-note {
-      font-size: 12px;
-      color: #64748b;
-      margin-top: 10px;
-    }
-  </style>
-</head>
+    <link rel="stylesheet" href="main-BBH4KZVP.css" />
+
+    <!-- Static card styles (保持原样) -->
+    <style>
+      .card { max-width:900px; margin:28px auto; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; display:flex; gap:20px; align-items:center; background:#ffffff; border-radius:12px; padding:20px; box-shadow:0 6px 20px rgba(16,24,40,0.08); }
+      .card-left { flex:1; min-width:0; }
+      .name { font-size:20px; font-weight:700; color:#0f172a; margin:0 0 6px; }
+      .title { margin:0 0 12px; color:#475569; font-size:14px; }
+      .info { font-size:14px; color:#334155; margin:6px 0; }
+      .cta { display:inline-block; margin-top:12px; background:#059669; color:#fff; padding:8px 12px; border-radius:999px; text-decoration:none; font-weight:600; }
+      .card-right { width:160px; flex-shrink:0; }
+      .avatar { width:160px; height:160px; object-fit:cover; border-radius:10px; display:block; }
+      .meta-note { font-size:12px; color:#64748b; margin-top:10px; }
+    </style>
+  </head>
+  <body>
+    <!-- Static preview shown when JS not loaded -->
+    <div id="app">
+      <div class="card" role="region" aria-label="Izabela Sobieska business card">
+        <div class="card-left">
+          <h1 class="name">Izabela Sobieska</h1>
+          <p class="title">Independent Financial Analyst & Investor</p>
+          <p class="info">Independent investor and financial analyst with 15+ years in multi-asset, FX/derivatives, crypto and real estate.</p>
+          <p class="info">Email: <a href="mailto:hello@izabela-sobieska.com">hello@izabela-sobieska.com</a></p>
+          <a class="cta" href="mailto:hello@izabela-sobieska.com">Email Izabela</a>
+          <div class="meta-note">部署后请在 Facebook Sharing Debugger 粘贴你的 URL 并点击 "Scrape Again" 强制刷新分享卡片缓存。</div>
+        </div>
+        <div class="card-right">
+          <img class="avatar" src="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" alt="Portrait of Izabela Sobieska" />
+        </div>
+      </div>
+    </div>
+
+    <!-- React mount point -->
+    <div id="root"></div>
+
+    <script src="main-X24REXSI.js"></script>
+  </body>
+</html>
